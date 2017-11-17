@@ -1,32 +1,27 @@
 package model;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author Hugo
- */
 public class User {
-    private String login;
-    private String pw;
+    private String _username;
+    private String _pw;
     
-    public void setLogin(String login){
-        this.login = login;
+    public User (String username, String pw){
+        this._username = username;
+        this._pw = pw;
     }
     
-    public String getLogin(){
-        return this.login;
+    public void setUsername(String username){
+        this._username = username;
     }
     
-    public void setPw(String pw){
-        this.pw = pw;
+    public String getUsername(){
+        return this._username;
     }
     
-    public String getPw(){
-        return this.pw;
+    public void setPassword(String pw){
+        this._pw = pw;
+    }
+    
+    public String getPassword(){
+        return this._pw;
     }
 }
