@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <jsp-config>
+        <!-- Toutes les pages ont un header -->
+        <jsp-property-group>
+            <description>Toutes les pages</description>
+            <url-pattern>*.jsp</url-pattern>
+            <page-encoding>UTF-8</page-encoding>
+            <include-prelude>/WEB-INF/prelude.jsp</include-prelude>
+            <include-prelude>/WEB-INF/header.jsp</include-prelude>
+            <include-coda>/WEB-INF/coda.jsp</include-coda>
+        </jsp-property-group>
+        <!-- Certaines pages affichent le message avec le nom de l'utilisateur -->
+        <jsp-property-group>
+            <description/>
+            <url-pattern>/WEB-INF/home.jsp</url-pattern>
+            <url-pattern>/WEB-INF/addStudent.jsp</url-pattern>
+            <url-pattern>/WEB-INF/printPdf.jsp</url-pattern>
+            <url-pattern>/WEB-INF/studentDetails.jsp</url-pattern>
+            <page-encoding>UTF-8</page-encoding>
+            <include-prelude>/WEB-INF/user_info.jsp</include-prelude>
+        </jsp-property-group>
+    </jsp-config>
+    <!-- Déclaration de la servlet contrôleur -->
+    <servlet>
+        <servlet-name>Cont</servlet-name>
+        <servlet-class>webapp.Controller</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Cont</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    
+    
+    
+</web-app>
